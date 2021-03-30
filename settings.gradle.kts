@@ -6,3 +6,4 @@ pluginManagement {
 rootProject.name = "Testing"
 
 include ("lab1")
+include("lab2")

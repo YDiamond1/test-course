@@ -5,7 +5,7 @@ import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.pow
 
-open class Sin(accuracy: Double) : Fun(accuracy * 0.001) {
+open class Sin(accuracy: Double) : Fun(accuracy * 0.01) {
     private var cache : Pair<Double, Double> = Pair(Double.NaN, Double.NaN);
 
     private fun fact(num: Int): Long =

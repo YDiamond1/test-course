@@ -6,7 +6,7 @@ import kotlin.math.pow
 
 open class Ln(
         accuracy: Double
-) : Fun (accuracy * 0.0001){
+) : Fun (accuracy){
     private val ln2 = this(2.0)
     private val ln1000 = this(1000.0)
 

@@ -1,6 +1,5 @@
 class Graph (
-    val graph : Array<IntArray>,
-
+    val graph : Array<IntArray>
 ){
     val visited : IntArray = IntArray(graph.size){0}
     val tour = mutableListOf<Int>()

@@ -5,7 +5,7 @@ interface Entity{
 }
 
 class Dolphin (val achievements: Array<DolphinAchievement>, val location: Location) : Entity {
-    override fun getEntity(): String = "DOLPHIN"
+    override fun getEntity(): String = "Dolphin"
 
     operator fun compareTo(entity: Entity): Int {
         var isHangOut = false
@@ -13,12 +13,20 @@ class Dolphin (val achievements: Array<DolphinAchievement>, val location: Locati
 
         achievements.forEach {
             when (it) {
-                is HangOut -> isHangOut = true
-                is Splashing -> isSplashing = true
+                is HangOut -> {
+                    if(it.getAchievement() == "Play")
+                    isHangOut = true
+
+                }
+
+                is Splashing -> {
+                    if(it.getAchievement() == "Splashing")
+                        isSplashing = true
+                }
             }
         }
         return if (entity is Human) {
-            if (isHangOut && isSplashing && location.getLocation() == "Earth") 1
+            if (isHangOut && isSplashing && location.getLocation() == "Earth" && getEntity() == "Dolphin") 1
             else 0
         } else 0
 
@@ -37,13 +45,22 @@ class Human(val name: String,val achievements: Array<HumanAchievement>, val loca
         var isWheel = false
         achievements.forEach {
             when (it) {
-                is City -> isCity = true
-                is War -> isWar = true
-                is Wheel -> isWheel = true
+                is City ->{
+                    if(it.getAchievement() == "NewYork")
+                    isCity = true
+                }
+                is War -> {
+                    if(it.getAchievement() == "WWW")
+                    isWar = true
+                }
+                is Wheel ->{
+                    if(it.getAchievement() == "Wheel")
+                    isWheel = true
+                }
             }
         }
         return if(entity is Dolphin){
-            if (isCity && isWar && isWheel && location.getLocation() == "Earth") 1
+            if (isCity && isWar && isWheel && location.getLocation() == "Earth" && getEntity() == name) 1
             else 0
         }
         else 0

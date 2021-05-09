@@ -1,7 +1,7 @@
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.pow
-import java.math.BigDecimal
+
 object Fun {
 
 
@@ -14,7 +14,7 @@ object Fun {
         if(abs(x)>1) return Double.NaN
         if(x == 1.0) return 0.0
         if(x == -1.0) return PI
-        val true_precision = precision.pow(2)
+        val truePrecision = precision.pow(2)
         var coef = 1.0
         var prev : Double
         var current = x
@@ -27,7 +27,7 @@ object Fun {
             current = coef * x.pow(sequenceCoef)/sequenceCoef
             result += current
             counter+=1
-        }while (abs(current - prev) >= true_precision)
+        }while (abs(current - prev) >= truePrecision)
         return begin - result;
     }
 

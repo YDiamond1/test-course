@@ -18,7 +18,7 @@ class Wheel : HumanAchievement{
 }
 
 class HangOut : DolphinAchievement{
-    override fun getAchievement() = "PLAY"
+    override fun getAchievement() = "Play"
 }
 
 class Splashing : DolphinAchievement{
